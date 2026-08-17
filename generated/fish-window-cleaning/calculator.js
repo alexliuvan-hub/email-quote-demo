@@ -1,5 +1,5 @@
 /**
- * {{BUSINESS_NAME}} — quote pricing (adapted from BrightPath calculator logic)
+ * Fish Window Cleaning — quote pricing (adapted from BrightPath calculator logic)
  * Exterior is always included for priced tiers; add-ons are optional.
  */
 
@@ -65,7 +65,7 @@ export function normalizeAddOns(addOns = {}) {
  */
 export function calculateQuote(tier, addOns = {}) {
   const disclaimer =
-    'Demo estimate only — sample rates for {{BUSINESS_NAME}}. Final price may vary after an on-site assessment.';
+    'Demo estimate only — sample rates for Fish Window Cleaning. Final price may vary after an on-site assessment.';
 
   if (!tier || !TIER_ORDER.includes(String(tier))) {
     return {

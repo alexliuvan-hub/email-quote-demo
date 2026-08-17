@@ -26,6 +26,25 @@ Or in VS Code / Cursor: install “Live Server” and open `index.html`.
 
 Works on Netlify, Vercel, or GitHub Pages as a static site (publish the repo root).
 
+## Generate personalized copies from CSV
+
+1. Put business names in [`businesses.csv`](businesses.csv) (column: `business_name`).
+2. Run (Node — works without installing Python):
+
+```bash
+node generate.mjs
+```
+
+Or if you install Python later:
+
+```bash
+python generate.py
+```
+
+3. Open each site under `generated/<business-slug>/` (needs a local server, same as above).
+
+Each folder is a full calculator with `{{BUSINESS_NAME}}` replaced in HTML + JS.
+
 ## Swap pricing
 
-Edit `PRICE_TABLE` in `calculator.js` when Pinpoint confirms real rates.
+Edit `PRICE_TABLE` in `calculator.js` when a client confirms real rates.
