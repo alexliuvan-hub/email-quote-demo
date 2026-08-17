@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allison Window Cleaning — Instant Quote Demo</title>
+    <meta
+      name="description"
+      content="Live window cleaning estimate demo for Allison Window Cleaning (Naperville / Downers Grove)."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="brand">Allison Window Cleaning</p>
+        <p class="tagline">
+          Instant residential window cleaning estimate for Naperville &amp; Downers Grove.
+        </p>
+        <p class="demo-chip">Interactive demo · no form required</p>
+      </header>
+
+      <div class="layout">
+        <section class="card" aria-labelledby="inputsHeading">
+          <h2 id="inputsHeading">Build your quote</h2>
+          <p class="hint">Adjust panes and options — the price updates live.</p>
+
+          <span class="section-label">How many panes?</span>
+          <div class="tiers" role="group" aria-label="Pane count">
+            <button type="button" class="tier" data-tier="25" aria-pressed="false">Up to 25</button>
+            <button type="button" class="tier" data-tier="40" aria-pressed="false">Up to 40</button>
+            <button type="button" class="tier" data-tier="60" aria-pressed="false">Up to 60</button>
+            <button type="button" class="tier" data-tier="80" aria-pressed="false">Up to 80</button>
+            <button type="button" class="tier" data-tier="100" aria-pressed="false">Up to 100</button>
+            <button type="button" class="tier" data-tier="101+" aria-pressed="false">101+</button>
+          </div>
+
+          <span class="section-label">Home stories</span>
+          <div class="stories" role="radiogroup" aria-label="Number of stories">
+            <label class="story">
+              <input type="radio" name="stories" value="1" checked />
+              1 story
+            </label>
+            <label class="story">
+              <input type="radio" name="stories" value="2" />
+              2 stories
+            </label>
+            <label class="story">
+              <input type="radio" name="stories" value="3" />
+              3+ stories
+            </label>
+          </div>
+
+          <span class="section-label">Add-ons</span>
+          <div class="addons">
+            <label class="addon">
+              <input type="checkbox" id="addonInterior" />
+              Interior window cleaning
+            </label>
+            <label class="addon">
+              <input type="checkbox" id="addonScreens" />
+              Screen cleaning
+            </label>
+            <label class="addon">
+              <input type="checkbox" id="addonTracks" />
+              Track detailing
+            </label>
+            <label class="addon">
+              <input type="checkbox" id="addonPressure" />
+              Pressure washing (add-on)
+            </label>
+          </div>
+
+          <p class="note">
+            Exterior window cleaning is always included. Stories are noted for scheduling
+            context in this demo (pricing follows pane tiers + add-ons).
+          </p>
+        </section>
+
+        <aside class="card estimate" id="estimatePanel" aria-live="polite">
+          <h2>Your estimate</h2>
+          <p class="hint">Updates as you change inputs</p>
+          <p class="price" id="estimateValue" data-state="empty">—</p>
+          <p class="breakdown" id="estimateBreakdown">
+            Pick how many panes you need cleaned. Exterior washing is included.
+          </p>
+          <p class="disclaimer" id="estimateDisclaimer">
+            Demo estimate only — sample rates for Allison Window Cleaning. Final price may vary
+            after an on-site assessment.
+          </p>
+        </aside>
+      </div>
+
+      <p class="footer">Rates are placeholders.</p>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

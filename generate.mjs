@@ -1,22 +1,33 @@
 /**
- * Generate personalized quote-calculator sites from businesses.csv.
+ * Generate personalized quote-calculator sites from CSV lists.
  *
- * For each business_name:
+ * Reads every *.csv in the project root that has a business_name column
+ * (e.g. businesses.csv, texasbusinesses.csv), merges names, then for each:
  *   - Create generated/<slug>/
  *   - Copy index.html, calculator.js, app.js, styles.css
  *   - Replace {{BUSINESS_NAME}} in HTML + calculator.js
+ * Also refreshes LINKS.md with live GitHub Pages URLs.
  *
  * Run from the project root:
  *   node generate.mjs
  */
 
-import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from "node:fs";
+import {
+  readFileSync,
+  writeFileSync,
+  mkdirSync,
+  cpSync,
+  rmSync,
+  existsSync,
+  readdirSync,
+} from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
-const CSV_PATH = join(ROOT, "businesses.csv");
 const OUT_DIR = join(ROOT, "generated");
+const LINKS_PATH = join(ROOT, "LINKS.md");
+const PAGES_BASE = "https://alexliuvan-hub.github.io/email-quote-demo/generated";
 const TEMPLATE_FILES = ["index.html", "calculator.js", "app.js", "styles.css"];
 const TOKEN = "{{BUSINESS_NAME}}";
 
@@ -31,28 +42,32 @@ function slugify(name) {
   return slug || "business";
 }
 
-/** Minimal CSV parser for a single business_name column (handles quotes). */
-function loadBusinessNames(csvPath) {
-  if (!existsSync(csvPath)) {
-    console.error(
-      `Missing businesses.csv. Put your CSV in the project root with a header column named business_name.`
-    );
-    process.exit(1);
-  }
+function findBusinessCsvFiles() {
+  return readdirSync(ROOT)
+    .filter((name) => name.toLowerCase().endsWith(".csv"))
+    .map((name) => join(ROOT, name))
+    .filter((path) => {
+      const first = readFileSync(path, "utf8")
+        .replace(/^\uFEFF/, "")
+        .split(/\r?\n/)
+        .find((line) => line.trim() !== "");
+      if (!first) return false;
+      return parseCsvLine(first)
+        .map((h) => h.trim())
+        .includes("business_name");
+    })
+    .sort();
+}
 
+/** Minimal CSV parser for a business_name column (handles quotes). */
+function loadBusinessNames(csvPath) {
   const raw = readFileSync(csvPath, "utf8").replace(/^\uFEFF/, "");
   const lines = raw.split(/\r?\n/).filter((line) => line.trim() !== "");
-  if (lines.length < 2) {
-    console.error("No business names found in the CSV.");
-    process.exit(1);
-  }
+  if (lines.length < 2) return [];
 
   const header = parseCsvLine(lines[0]).map((h) => h.trim());
   const nameIdx = header.indexOf("business_name");
-  if (nameIdx === -1) {
-    console.error(`CSV must have a header column named business_name (found: ${header.join(", ")})`);
-    process.exit(1);
-  }
+  if (nameIdx === -1) return [];
 
   const names = [];
   for (let i = 1; i < lines.length; i++) {
@@ -60,12 +75,6 @@ function loadBusinessNames(csvPath) {
     const name = (cols[nameIdx] || "").trim();
     if (name) names.push(name);
   }
-
-  if (!names.length) {
-    console.error("No business names found in the CSV.");
-    process.exit(1);
-  }
-
   return names;
 }
 
@@ -122,6 +131,22 @@ function writePersonalizedCopy(businessName, destDir) {
   }
 }
 
+function writeLinksMarkdown(slugs) {
+  const lines = [
+    "# Live demo links",
+    "",
+    "Paste these into cold emails after GitHub Pages deploy finishes.",
+    "",
+    "| Business folder | Live URL |",
+    "|---|---|",
+  ];
+  for (const slug of slugs) {
+    lines.push(`| \`${slug}\` | ${PAGES_BASE}/${slug}/ |`);
+  }
+  lines.push("");
+  writeFileSync(LINKS_PATH, lines.join("\n"), "utf8");
+}
+
 function main() {
   for (const filename of TEMPLATE_FILES) {
     if (!existsSync(join(ROOT, filename))) {
@@ -130,12 +155,37 @@ function main() {
     }
   }
 
-  const names = loadBusinessNames(CSV_PATH);
+  const csvFiles = findBusinessCsvFiles();
+  if (!csvFiles.length) {
+    console.error(
+      "No CSV files with a business_name column found in the project root."
+    );
+    process.exit(1);
+  }
+
+  const seen = new Set();
+  const names = [];
+  for (const csvPath of csvFiles) {
+    const fromFile = loadBusinessNames(csvPath);
+    console.log(`Reading ${csvPath.split(/[/\\]/).pop()} (${fromFile.length} names)`);
+    for (const name of fromFile) {
+      const key = name.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      names.push(name);
+    }
+  }
+
+  if (!names.length) {
+    console.error("No business names found in the CSV file(s).");
+    process.exit(1);
+  }
 
   if (existsSync(OUT_DIR)) rmSync(OUT_DIR, { recursive: true, force: true });
   mkdirSync(OUT_DIR, { recursive: true });
 
   const usedSlugs = new Map();
+  const slugs = [];
   console.log(`Generating ${names.length} site(s) into generated/ ...`);
 
   for (const name of names) {
@@ -143,11 +193,14 @@ function main() {
     const count = usedSlugs.get(base) || 0;
     usedSlugs.set(base, count + 1);
     const slug = count === 0 ? base : `${base}-${count + 1}`;
+    slugs.push(slug);
 
     writePersonalizedCopy(name, join(OUT_DIR, slug));
     console.log(`  OK  "${name}" -> generated/${slug}/`);
   }
 
+  writeLinksMarkdown(slugs.sort());
+  console.log("Updated LINKS.md");
   console.log("Done.");
 }
 
