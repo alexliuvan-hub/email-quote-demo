@@ -33,6 +33,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html styles.css app.js calculator.js _site/
+          cp -r generated _site/generated
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
