@@ -16,6 +16,7 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `apex-sun-solutions` | https://alexliuvan-hub.github.io/email-quote-demo/generated/apex-sun-solutions/ |
 | `apex-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/apex-window-cleaning/ |
 | `best-choice-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/best-choice-window-cleaning/ |
+| `city-window-cleaners` | https://alexliuvan-hub.github.io/email-quote-demo/generated/city-window-cleaners/ |
 | `clear-choice-window-cleaning-pressure-washing` | https://alexliuvan-hub.github.io/email-quote-demo/generated/clear-choice-window-cleaning-pressure-washing/ |
 | `contact-c-clearly-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/contact-c-clearly-window-cleaning/ |
 | `cp-window-cleaning-services` | https://alexliuvan-hub.github.io/email-quote-demo/generated/cp-window-cleaning-services/ |
