@@ -34,7 +34,7 @@ with sync_playwright() as p:
         page.click('[data-tier="40"]')
         page.check("text=Screen cleaning")
         page.wait_for_timeout(1200)
-        page.screenshot(path=os.path.join(OUT, f"{slug}.png"), clip={"x": 0, "y": 0, "width": 1100, "height": 520})
+        page.screenshot(path=os.path.join(OUT, f"{slug}.png"), full_page=True)
         print("  OK", slug)
     browser.close()
 httpd.shutdown()
