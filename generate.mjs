@@ -6,6 +6,7 @@
  *   - Create generated/<slug>/
  *   - Copy index.html, calculator.js, app.js, styles.css
  *   - Replace {{BUSINESS_NAME}} in HTML + calculator.js
+ *   - Replace {{FOR_AREA}} with " for <area>" from an optional `area` column
  * Also refreshes LINKS.md with live GitHub Pages URLs.
  *
  * Run from the project root:
@@ -30,6 +31,11 @@ const LINKS_PATH = join(ROOT, "LINKS.md");
 const PAGES_BASE = "https://alexliuvan-hub.github.io/email-quote-demo/generated";
 const TEMPLATE_FILES = ["index.html", "calculator.js", "app.js", "styles.css"];
 const TOKEN = "{{BUSINESS_NAME}}";
+const AREA_TOKEN = "{{FOR_AREA}}";
+
+function escapeHtml(text) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
 
 function slugify(name) {
   const slug = name
@@ -67,13 +73,15 @@ function loadBusinessNames(csvPath) {
 
   const header = parseCsvLine(lines[0]).map((h) => h.trim());
   const nameIdx = header.indexOf("business_name");
+  const areaIdx = header.indexOf("area");
   if (nameIdx === -1) return [];
 
   const names = [];
   for (let i = 1; i < lines.length; i++) {
     const cols = parseCsvLine(lines[i]);
     const name = (cols[nameIdx] || "").trim();
-    if (name) names.push(name);
+    const area = areaIdx === -1 ? "" : (cols[areaIdx] || "").trim();
+    if (name) names.push({ name, area });
   }
   return names;
 }
@@ -108,7 +116,8 @@ function parseCsvLine(line) {
   return out;
 }
 
-function writePersonalizedCopy(businessName, destDir) {
+function writePersonalizedCopy(businessName, area, destDir) {
+  const forArea = area ? ` for ${escapeHtml(area)}` : "";
   mkdirSync(destDir, { recursive: true });
 
   for (const filename of TEMPLATE_FILES) {
@@ -124,7 +133,8 @@ function writePersonalizedCopy(businessName, destDir) {
         console.error(`${filename} has no ${TOKEN} token — tokenize the template first.`);
         process.exit(1);
       }
-      writeFileSync(join(destDir, filename), text.split(TOKEN).join(businessName), "utf8");
+      const out = text.split(TOKEN).join(businessName).split(AREA_TOKEN).join(forArea);
+      writeFileSync(join(destDir, filename), out, "utf8");
     } else {
       cpSync(src, join(destDir, filename));
     }
@@ -168,11 +178,11 @@ function main() {
   for (const csvPath of csvFiles) {
     const fromFile = loadBusinessNames(csvPath);
     console.log(`Reading ${csvPath.split(/[/\\]/).pop()} (${fromFile.length} names)`);
-    for (const name of fromFile) {
-      const key = name.toLowerCase();
+    for (const entry of fromFile) {
+      const key = entry.name.toLowerCase();
       if (seen.has(key)) continue;
       seen.add(key);
-      names.push(name);
+      names.push(entry);
     }
   }
 
@@ -188,14 +198,14 @@ function main() {
   const slugs = [];
   console.log(`Generating ${names.length} site(s) into generated/ ...`);
 
-  for (const name of names) {
+  for (const { name, area } of names) {
     const base = slugify(name);
     const count = usedSlugs.get(base) || 0;
     usedSlugs.set(base, count + 1);
     const slug = count === 0 ? base : `${base}-${count + 1}`;
     slugs.push(slug);
 
-    writePersonalizedCopy(name, join(OUT_DIR, slug));
+    writePersonalizedCopy(name, area, join(OUT_DIR, slug));
     console.log(`  OK  "${name}" -> generated/${slug}/`);
   }
 
