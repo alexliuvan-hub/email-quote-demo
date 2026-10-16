@@ -34,6 +34,7 @@ jobs:
           mkdir _site
           cp index.html styles.css app.js calculator.js _site/
           cp -r generated _site/generated
+          cp -r previews _site/previews
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
