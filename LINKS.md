@@ -15,6 +15,8 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `american-patriot-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/american-patriot-window-cleaning/ |
 | `apex-sun-solutions` | https://alexliuvan-hub.github.io/email-quote-demo/generated/apex-sun-solutions/ |
 | `apex-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/apex-window-cleaning/ |
+| `arp-wash` | https://alexliuvan-hub.github.io/email-quote-demo/generated/arp-wash/ |
+| `bam-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/bam-window-cleaning/ |
 | `best-choice-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/best-choice-window-cleaning/ |
 | `city-window-cleaners` | https://alexliuvan-hub.github.io/email-quote-demo/generated/city-window-cleaners/ |
 | `clear-choice-window-cleaning-pressure-washing` | https://alexliuvan-hub.github.io/email-quote-demo/generated/clear-choice-window-cleaning-pressure-washing/ |
@@ -26,8 +28,10 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `davidson-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/davidson-window-cleaning/ |
 | `dc-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/dc-window-cleaning/ |
 | `detailed-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/detailed-window-cleaning/ |
+| `dfw-details` | https://alexliuvan-hub.github.io/email-quote-demo/generated/dfw-details/ |
 | `double-eagle-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/double-eagle-window-cleaning/ |
 | `dutch-shine-maintenance-services` | https://alexliuvan-hub.github.io/email-quote-demo/generated/dutch-shine-maintenance-services/ |
+| `eco-green-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/eco-green-window-cleaning/ |
 | `extreme-pressure-washers` | https://alexliuvan-hub.github.io/email-quote-demo/generated/extreme-pressure-washers/ |
 | `fire-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/fire-window-cleaning/ |
 | `fish-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/fish-window-cleaning/ |
@@ -45,10 +49,13 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `hrs-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/hrs-window-cleaning/ |
 | `ic-clearview-services` | https://alexliuvan-hub.github.io/email-quote-demo/generated/ic-clearview-services/ |
 | `its-so-clean` | https://alexliuvan-hub.github.io/email-quote-demo/generated/its-so-clean/ |
+| `jjc-window-cleaning-llc` | https://alexliuvan-hub.github.io/email-quote-demo/generated/jjc-window-cleaning-llc/ |
 | `km-steam-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/km-steam-cleaning/ |
 | `kts-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/kts-window-cleaning/ |
 | `lakewood-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/lakewood-window-cleaning/ |
+| `metroplex-window-and-gutter-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/metroplex-window-and-gutter-cleaning/ |
 | `nothing-but-clean-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/nothing-but-clean-window-cleaning/ |
+| `pane-in-the-glass` | https://alexliuvan-hub.github.io/email-quote-demo/generated/pane-in-the-glass/ |
 | `picture-perfect-glass` | https://alexliuvan-hub.github.io/email-quote-demo/generated/picture-perfect-glass/ |
 | `pinpoint-maintenance` | https://alexliuvan-hub.github.io/email-quote-demo/generated/pinpoint-maintenance/ |
 | `pristine-of-austin` | https://alexliuvan-hub.github.io/email-quote-demo/generated/pristine-of-austin/ |
@@ -65,6 +72,8 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `texan-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/texan-window-cleaning/ |
 | `texas-apex-exteriors` | https://alexliuvan-hub.github.io/email-quote-demo/generated/texas-apex-exteriors/ |
 | `texas-pro-wash-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/texas-pro-wash-window-cleaning/ |
+| `texas-window-shiners` | https://alexliuvan-hub.github.io/email-quote-demo/generated/texas-window-shiners/ |
+| `top-tier-window-cleanings` | https://alexliuvan-hub.github.io/email-quote-demo/generated/top-tier-window-cleanings/ |
 | `uptown-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/uptown-window-cleaning/ |
 | `west-austin-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/west-austin-window-cleaning/ |
 | `what-a-pane-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/what-a-pane-window-cleaning/ |
@@ -72,5 +81,6 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `window-wizards` | https://alexliuvan-hub.github.io/email-quote-demo/generated/window-wizards/ |
 | `window-works` | https://alexliuvan-hub.github.io/email-quote-demo/generated/window-works/ |
 | `windowmaster-services-llc` | https://alexliuvan-hub.github.io/email-quote-demo/generated/windowmaster-services-llc/ |
+| `windows-by-george` | https://alexliuvan-hub.github.io/email-quote-demo/generated/windows-by-george/ |
 | `windows-great` | https://alexliuvan-hub.github.io/email-quote-demo/generated/windows-great/ |
 | `zero-streaks-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/zero-streaks-window-cleaning/ |
