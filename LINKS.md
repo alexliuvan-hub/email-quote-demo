@@ -20,6 +20,7 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `atx-clean-pressure-washing` | https://alexliuvan-hub.github.io/email-quote-demo/generated/atx-clean-pressure-washing/ |
 | `bam-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/bam-window-cleaning/ |
 | `best-choice-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/best-choice-window-cleaning/ |
+| `beyond-blue-services` | https://alexliuvan-hub.github.io/email-quote-demo/generated/beyond-blue-services/ |
 | `black-tie-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/black-tie-window-cleaning/ |
 | `casa-care-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/casa-care-window-cleaning/ |
 | `central-texas-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/central-texas-window-cleaning/ |
