@@ -9,6 +9,7 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `accurate-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/accurate-window-cleaning/ |
 | `activate-pressure-washing` | https://alexliuvan-hub.github.io/email-quote-demo/generated/activate-pressure-washing/ |
 | `ad-window-cleaning-and-repair` | https://alexliuvan-hub.github.io/email-quote-demo/generated/ad-window-cleaning-and-repair/ |
+| `affordable-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/affordable-window-cleaning/ |
 | `all-clear-here-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/all-clear-here-window-cleaning/ |
 | `all-seasons-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/all-seasons-window-cleaning/ |
 | `allison-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/allison-window-cleaning/ |
