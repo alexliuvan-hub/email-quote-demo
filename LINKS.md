@@ -80,6 +80,7 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `jn-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/jn-window-cleaning/ |
 | `kelley-property-care` | https://alexliuvan-hub.github.io/email-quote-demo/generated/kelley-property-care/ |
 | `kings-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/kings-window-cleaning/ |
+| `kjs-bright-window-cleaner` | https://alexliuvan-hub.github.io/email-quote-demo/generated/kjs-bright-window-cleaner/ |
 | `km-steam-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/km-steam-cleaning/ |
 | `kts-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/kts-window-cleaning/ |
 | `lake-travis-power-washing` | https://alexliuvan-hub.github.io/email-quote-demo/generated/lake-travis-power-washing/ |
@@ -89,6 +90,7 @@ Paste these into cold emails after GitHub Pages deploy finishes.
 | `metroplex-window-and-gutter-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/metroplex-window-and-gutter-cleaning/ |
 | `morningstar-exterior-pros-llc` | https://alexliuvan-hub.github.io/email-quote-demo/generated/morningstar-exterior-pros-llc/ |
 | `nothing-but-clean-window-cleaning` | https://alexliuvan-hub.github.io/email-quote-demo/generated/nothing-but-clean-window-cleaning/ |
+| `ottos-exterior-services` | https://alexliuvan-hub.github.io/email-quote-demo/generated/ottos-exterior-services/ |
 | `pane-in-the-glass` | https://alexliuvan-hub.github.io/email-quote-demo/generated/pane-in-the-glass/ |
 | `paradise-pro-wash` | https://alexliuvan-hub.github.io/email-quote-demo/generated/paradise-pro-wash/ |
 | `picture-perfect-glass` | https://alexliuvan-hub.github.io/email-quote-demo/generated/picture-perfect-glass/ |
